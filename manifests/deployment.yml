@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jeyanazureaksdemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jeyanazureaksdemo
+  template:
+    metadata:
+      labels:
+        app: jeyanazureaksdemo 
+    spec:
+      containers:
+        - name: jeyanazureaksdemo 
+          image: azuredevopsaks.azurecr.io/jeyanazureaksdemo
+          ports:
+          - containerPort: 80
